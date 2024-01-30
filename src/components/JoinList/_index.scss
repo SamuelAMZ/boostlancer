@@ -1,0 +1,42 @@
+.join--list {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+
+    & .profile {
+        display: flex;
+        align-items: flex-start;
+        gap: 0;
+
+        & img {
+            width: 57px;
+            height: 57px;
+            border-radius: 57px;
+            border: 2px solid #FFF;
+
+            position: relative;
+
+            &:nth-child(2) {
+                left: -1.7rem;
+            }
+
+            &:nth-child(3) {
+                left: -3.5rem;
+            }
+
+            &:nth-child(4) {
+                left: -4.5rem;
+                margin-right: -4.5rem;
+            }
+        }
+    }
+
+    &--text {
+        color: #FFF;
+        font-family: Poppins;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}

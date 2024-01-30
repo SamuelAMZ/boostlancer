@@ -1,0 +1,714 @@
+@use '../../styles/extends';
+@use '../../styles/breakpoints' as b;
+
+
+// services part
+.services {
+    background-color: #E7E9EB;
+    padding-block: clamp(4rem, 4.5rem + 1vw, 6.25rem);
+
+    &>* {
+        display: grid;
+        grid-template-columns: .8fr 1.3fr;
+        gap: 5rem;
+        margin-inline: auto;
+
+        @include b.breakpoint-down("1300") {
+            
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            gap: 2rem;
+            justify-content: center;
+            margin-inline: auto;
+        }
+    }
+
+    & .features {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(14px, 14px + 2.5vw, 1.5625rem);
+        flex: 1;
+
+        max-width: 606px;
+
+        @include b.breakpoint-down("1300"){
+            margin-inline: auto;
+        }
+
+        & svg {
+            width: 69px;
+            height: 69px;
+            margin-top: -9px; // push the svg on the top
+
+            @include b.breakpoint-down("500") {
+                display: none;
+            }
+        }
+
+        & .item {
+            border-radius: 20px;
+            background: #FFF;
+            display: flex;
+            padding: 20px;
+            align-items: flex-start;
+            gap: 20px;
+            align-self: stretch;
+
+            max-width: 500px; // on lg
+
+            @include b.breakpoint-down("1300") {
+                max-width: 100%;
+                margin-inline: auto;
+            }
+
+
+
+            & .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: .5rem;
+            }
+
+            & .title {
+                color: #19191B;
+                font-family: Poppins;
+                font-size: clamp(16px, 14px + 1vw, 24px);
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+
+            & .text {
+                color: #696871;
+                font-family: Poppins;
+                font-size: clamp(14px, 12px + 1vw, 16px);
+                font-style: normal;
+                font-weight: 400;
+                letter-spacing: -0.5px;
+                line-height: 1.9rem;
+            }
+        }
+    }
+
+    & .services--text {
+        display: flex;
+        align-items: center;
+        max-width: 660px;
+
+        @include b.breakpoint-down("1300") {
+            margin-inline: auto;
+        }
+
+        & .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: clamp(1rem, .6rem + 1vw, 1.8125rem);
+            max-width: 660px;
+
+            @include b.breakpoint-down("1300") {
+            padding-top: 2rem;
+                margin-inline: auto;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        & .title {
+            color: #001E00;
+            @extend %title-style;
+        }
+
+        & .text {
+            @extend %text-style;
+            width: 100%;
+            color: #001E00;
+            font-family: Poppins;
+            line-height: 2.2rem;
+        }
+
+        & button {
+            @extend %button;
+
+            @include b.breakpoint-down("1000") {
+                justify-content: center;
+                margin-inline: auto;
+            }
+        }
+    }
+}
+
+// notif part
+
+.notificationPart {
+
+    @include b.breakpoint-down("1000") {
+        padding-block-start: clamp(3rem, 2rem + 1.5vw, 5rem);
+    }
+
+    & .join--list {
+        @include b.breakpoint-down("1000") {
+            justify-content: center;
+        }
+    }
+
+    & .join--list--text {
+        color: #001E00;
+    }
+
+    &>div {
+        display: grid;
+        grid-template-columns: 1.2fr .7fr;
+        margin-inline: auto;
+        padding-inline: 0;
+
+        @include b.breakpoint-down("1280") {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            justify-content: center;
+            gap: 2rem;
+            margin-inline: auto;
+            text-align: center;
+
+        }
+    }
+
+    & .content {
+        margin-inline: auto;
+        position: relative;
+        padding-inline: clamp(1.5rem, .5rem + 4vw, 5rem);
+        align-self: center;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include b.breakpoint-down("1680") {
+            padding-inline: 0;
+            padding-top: clamp(1.5rem, .5rem + 3vw, 4rem);
+        }
+
+        @include b.breakpoint-down("1280") {
+            align-items: center;
+            padding-inline: clamp(1.5rem, 1rem + 1vw, 4.5rem);
+
+        }
+    }
+
+    & .notification-icons {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: -80px;
+        right: -9rem;
+
+        @include b.breakpoint-down("1300") {
+            position: absolute;
+            width: 189px;
+            height: 190px;
+            top: -37px;
+            right: -6rem;
+        }
+
+        @include b.breakpoint-down("1280") {
+            display: none;
+        }
+
+        @include b.breakpoint("1280") {
+            right: -11rem;
+        }
+
+        @include b.breakpoint("1440") {
+            right: -16rem;
+        }
+
+        @include b.breakpoint("1680") {
+            right: -7rem;
+        }
+
+
+    }
+
+    & .notif--text {
+        display: flex;
+        align-items: center;
+
+        &--content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: clamp(1rem, .9rem + 1vw, 1.8125rem);
+
+            max-width: 660px;
+
+            @include b.breakpoint-down("1280") {
+                align-items: center
+            }
+        }
+
+        & .title {
+            @extend %title-style;
+            color: #001E00;
+
+            @include b.breakpoint("1000") {
+                width: 88%;
+            }
+        }
+
+        & .text {
+            @extend %text-style;
+            color: #001E00;
+            font-family: Poppins;
+        }
+
+        & button {
+            @extend %button;
+
+            @include b.breakpoint-down("1000") {
+                justify-content: center;
+                margin-inline: auto;
+            }
+        }
+    }
+
+    & .user {
+        @include b.breakpoint-down("1280") {
+            display: none;
+        }
+    }
+}
+
+// features part
+
+.feature {
+
+    &>.content {
+        padding-block: 6.25rem;
+        margin-inline: auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: clamp(35px, 30px + 2.5vw, 80px);
+    }
+
+    & .title {
+        @extend %title-style;
+        text-align: center;
+        color: #001E00;
+
+        @include b.breakpoint-down("1000") {
+            text-align: center;
+        }
+    }
+
+    & .features--items {
+
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(3, auto);
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        width: 70%;
+        margin-inline: auto;
+
+        @include b.breakpoint-down("1000") {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        @include b.breakpoint-down("500") {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            gap: 1rem;
+            width: 100%;
+        }
+
+
+
+        & .item {
+            border-radius: 100px;
+            border: 1px solid #EAE9F2;
+            background: #FFF;
+            display: flex;
+            padding: 8px 24px 8px 12px;
+            align-items: center;
+            gap: 16px;
+            text-align: center;
+            justify-self: center;
+
+            @include b.breakpoint("1000") {
+                &:nth-child(n) {
+                    grid-column: span 2;
+                }
+
+                &:nth-child(4),
+                &:nth-child(5) {
+                    grid-column: span 3;
+                }
+
+                &:nth-child(1),
+                &:nth-child(4),
+                &:nth-child(6) {
+                    justify-self: flex-end;
+                }
+
+                &:nth-child(3),
+                &:nth-child(5),
+                &:nth-child(8) {
+                    justify-self: flex-start;
+                }
+
+                &:nth-child(7) {
+                    width: 100%;
+                }
+            }
+        }
+
+        @include b.breakpoint-down("1000") {
+            &:nth-child(n) {
+                grid-column: span 1;
+            }
+        }
+    }
+}
+
+
+// pricing part
+
+.pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+
+
+
+    & .contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(35px, 35px + 1vw, 80px);
+
+        @include b.breakpoint-down("768") {
+            padding-inline: clamp(1.5rem, 1rem + 1vw, 3rem);
+        }
+    }
+
+    & .heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(17px, 14px + .8vw, 24px);
+
+        & .title {
+            @extend %title-style;
+            color: #001E00;
+            text-align: center;
+        }
+
+
+        & .text {
+            @extend %text-style;
+            color: #001E00;
+            text-align: center;
+            font-family: Poppins;
+            width: min(65%, 759px);
+
+            @include b.breakpoint-down("768") {
+                width: 95%;
+            }
+        }
+    }
+
+    & .checklist {
+        &>.content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            & .options {
+                color: #696871;
+                text-align: right;
+                font-family: Poppins;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 28px;
+                /* 155.556% */
+                letter-spacing: -0.563px;
+
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+
+            & .saved {
+                color: #FFF;
+                font-family: Poppins;
+                font-size: 13px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+
+                border-radius: 6.25rem;
+                background: #14A800;
+
+                display: flex;
+                padding: 6px 16px;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    }
+
+    & .pricing--section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 91px;
+
+        margin-bottom: -10rem;
+        z-index: 3;
+
+        @include b.breakpoint-down("768") {
+            margin-bottom: 0;
+        }
+
+        & .price-plan {
+            width: 1080px;
+            padding: clamp(30px, 28px + 1.5vw, 64px) 80px;
+
+            border-radius: 20px;
+            border: 1px solid var(--Colors-Gray-Faint-Gray, #E7E9EB);
+            background: #F7F7FB;
+
+            margin-inline: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+
+
+
+            @include b.breakpoint-down("768") {
+                // flex-direction: column;
+                gap: clamp(2.2rem, 1.5rem + 1vw, 3rem);
+                background-color: transparent;
+                border: none;
+                width: 100%;
+                padding-inline: 0;
+                grid-template-columns: 1fr;
+            }
+        }
+
+        & .pricing--card {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: clamp(2rem, 1.8rem + 1vw, 2.5rem);
+
+
+            & .price>div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: clamp(16px, 14px + 1vw, 24px);
+
+                @include b.breakpoint-down("768") {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    row-gap: 0;
+
+                    & h3 {
+                        grid-column: span 2;
+                    }
+                }
+            }
+
+            & h3 {
+                color: #14A800;
+                text-align: center;
+                font-family: Poppins;
+                font-size: clamp(14px, 12px + 1vw, 16px);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 28px;
+                /* 175% */
+                letter-spacing: -0.5px;
+            }
+
+            & .price--text {
+                color: #19191B;
+                text-align: center;
+                font-family: Poppins;
+                font-size: clamp(20px, 18px + 1vw, 30px);
+                font-style: normal;
+                font-weight: 600;
+                line-height: 56px;
+                /* 186.667% */
+                letter-spacing: -0.517px;
+
+                & .span {
+                    font-size: 80px;
+                    letter-spacing: -1.379px;
+                }
+            }
+
+            & button {
+                @extend %button;
+                width: auto;
+                height: auto;
+                display: flex;
+                padding: 16px 32px;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        & .price--checklist {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+
+            @include b.breakpoint-down("1000") {
+                justify-self: center;
+            }
+
+            & .item {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+        }
+
+    }
+
+    & .price-feature {
+
+        background: #001E00;
+        width: 100%;
+
+        padding-top: 15rem;
+        padding-bottom: 5rem;
+
+        @include b.breakpoint-down("768") {
+            padding-block: clamp(3rem, 2.2rem + 1vw, 5rem);
+        }
+
+        &>div {
+            position: relative;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            gap: 3.625rem 2rem;
+            // width: 80%;
+            max-width: 1080px;
+            margin-inline: auto;
+
+            @include b.breakpoint-down("1280") {
+                padding-inline: clamp(1.5rem, 1rem + 1vw, 3rem);
+            }
+
+            @include b.breakpoint-down("768") {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(2, auto);
+                gap: 2rem;
+                justify-content: center;
+            }
+        }
+
+        & .item {
+            display: grid;
+            grid-template-columns: 40px auto;
+            column-gap: .5rem;
+
+            @include b.breakpoint-down("768") {
+                justify-content: center;
+            }
+
+            @include b.breakpoint-down("500") {
+                column-gap: 0;
+            }
+
+            & svg {
+                position: relative;
+                top: .5rem;
+                height: clamp(22px, 1rem + 1.3vw, 30px);
+            }
+
+            & .title {
+                color: #FFF;
+                font-family: Poppins;
+                font-size: clamp(16px, 14px + 1vw, 24px);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: -0.75px;
+            }
+
+            & .text {
+                color: rgba(255, 255, 255, 0.70);
+                font-family: Poppins;
+                font-size: clamp(14px, 12px + 1vw, 16px);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 28px;
+                /* 175% */
+                letter-spacing: -0.5px;
+
+                max-width: 472.108px;
+                ;
+            }
+        }
+    }
+}
+
+
+// get access
+.get-access {
+    padding-block: clamp(3.5rem, 3rem + 4vw, 6.25rem);
+
+    & .container {
+        display: flex;
+        justify-content: center;
+        margin-inline: auto;
+
+        &>div {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            max-width: 626px;
+            margin-inline: auto;
+        }
+
+        & .title {
+            @extend %title-style;
+            color: #001E00;
+            text-align: center;
+        }
+
+        & .text {
+            @extend %text-style;
+            color: #001E00;
+            text-align: center;
+            font-family: Poppins;
+        }
+
+        & button {
+            @extend %button;
+            width: auto;
+            padding-inline: 1rem;
+        }
+    }
+}
