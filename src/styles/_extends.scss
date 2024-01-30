@@ -1,0 +1,47 @@
+@use './breakpoints' as b;
+
+%button {
+    border-radius: 6.25rem;
+    border: 1px solid #14A800;
+    background: #14A800;
+    width: clamp(120px, 80px + 3vw, 200px);
+    height: clamp(40px, 25px + 1.5vw, 55px);
+    flex-shrink: 0;
+
+    border: 1px solid #001E00;
+    color: #ffffff;
+    transition: all .3s ease-in;
+
+    &:hover {
+        box-shadow: 0px 0px 4px 1px #51ff3a82;
+        opacity: .9;
+        transition: all .3s ease-in;
+    }
+}
+
+
+%text-style {
+    color: #001E00;
+
+    font-family: Poppins;
+    font-size: clamp(14px, 12.5px + 1vw, 22px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 39px;
+    /* 177.273% */
+    width: 100%;
+
+    @include b.breakpoint-down("768") {
+        width: 95%;
+        text-align: center;
+    }
+}
+
+%title-style {
+    font-family: Poppins;
+    font-size: clamp(22px, 24px + 1vw, 48px);
+    font-style: normal;
+    font-weight: 800;
+    line-height: clamp(43px, 40px + 1vw, 70px);
+    /* 145.833% */
+}

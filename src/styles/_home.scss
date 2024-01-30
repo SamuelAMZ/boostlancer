@@ -1,0 +1,322 @@
+@use './breakpoints' as b;
+
+
+// list
+.join--list {
+
+    @include b.breakpoint-down("500") {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    & .join--list--text {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        font-size: clamp(18px, 14px + 1vw, 22px);
+    }
+
+}
+
+// hero section
+.hero--section {
+    background: #14A800;
+
+    & .nav-bar {
+        margin-inline: auto;
+        display: flex;
+        // width: 1440px;
+        height: 70px;
+        padding-block: 10px;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.32);
+    }
+
+    & .logo {
+        color: var(--Colors-White, #FFF);
+        font-family: Poppins;
+        font-size: clamp(20px, 15px + 1.2vw, 32px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        text-transform: uppercase;
+
+        @include b.breakpoint-down("760") {
+            padding: 0;
+            color: red;
+        }
+    }
+
+    & .nav--links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+
+        & button {
+            border-radius: 100px;
+            border: 1px solid #FFF;
+            display: flex;
+            padding: 7px 24px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+
+        & .login--btn {
+            background: #14A800;
+            color: #FFF;
+        }
+
+        & .access--btn {
+            background: #FFF;
+
+            @include b.breakpoint-down("768") {
+                display: none;
+            }
+        }
+    }
+
+    & .hero {
+        margin-inline: auto;
+        position: relative;
+
+        @include b.breakpoint-down("1300") {
+            margin-inline: auto;
+            padding-block-end: clamp(3rem, 25rem + 1vw, 4rem);
+        }
+
+        & .section-1 {
+            // display: flex;
+            padding-block-start: 3rem;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            @include b.breakpoint-down("1300") {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        & .content {
+            max-width: 589px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            gap: 5rem;
+
+            @include b.breakpoint("1300") {
+                justify-self: center;
+            }
+
+
+            @include b.breakpoint-down('1300') {
+                width: 100%;
+                margin-inline: auto;
+                align-items: center;
+            }
+
+            &--container {
+                display: flex;
+                flex-direction: column;
+                gap: 1.8125rem;
+                justify-content: center;
+
+                @include b.breakpoint-down('1300') {
+                    align-items: center;
+                    margin-inline: auto !important;
+
+                    & * {
+                        text-align: center;
+                    }
+                }
+
+
+                & .main--title {
+                    color: #FFF;
+                    font-family: Poppins;
+                    font-size: clamp(30px, 30px + 1.5vw, 60px);
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: clamp(50px, 55px + 1.9vw, 70px);
+                    /* 116.667% */
+                }
+
+                & .main--text {
+                    color: #FFF;
+                    font-family: Poppins;
+                    font-size: clamp(14px, 13px + 1vw, 24px);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: clamp(27px, 25px + 1.7vw, 39px);
+                    width: 536px; // on lg
+                    /* 177.273% */
+
+                    @include b.breakpoint-down("1000") {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        & .input--container {
+            border-radius: 100px;
+            border: 1px solid #EAE9F2;
+            background: #FFF;
+            display: flex;
+            padding: 8px 8px 8px 24px;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+
+            width: 511px; // on lg
+
+            @include b.breakpoint-down("768") {
+                width: 70vw;
+                padding: 0;
+
+                flex-direction: column;
+                gap: 1.5rem;
+                background-color: transparent;
+                border: none;
+            }
+
+            & input[type="email"] {
+                margin-left: .9rem;
+                flex: 1 1 0;
+                margin-inline: 1.3rem;
+
+                &,
+                &:active,
+                &:focus {
+                    border: none;
+                    outline: none;
+                }
+
+                @include b.breakpoint-down("768") {
+                    flex: initial;
+                    border-radius: 100px;
+                    border: 1px solid #EAE9F2;
+                    background: #FFF;
+                    width: 100%;
+                    margin: 0;
+                    height: 55px;
+                    text-align: start;
+                    padding-inline-start: 3.5rem;
+
+                }
+            }
+
+            & svg {
+                @include b.breakpoint-down("768") {
+                    position: absolute;
+                    top: 18px;
+                    left: 21px;
+                }
+            }
+
+
+
+
+            & button {
+                border-radius: 6.25rem;
+                border: 1px solid #001E00;
+                background: #001E00;
+                width: clamp(151px, 100px + 1rem, 200px);
+                height: clamp(20px, 36px + 1vw, 55px);
+                flex-shrink: 0;
+
+                color: #FFF;
+                text-align: center;
+                font-family: Poppins;
+                font-size: clamp(15px, 12px + 1vw, 18px);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+
+        & .bg-section {
+            position: relative;
+
+            @include b.breakpoint-down('1300') {
+                display: none;
+            }
+
+            & .bg {
+
+                display: block;
+
+                object-fit: contain;
+                max-width: 100%;
+                height: 36rem;
+                background-image: url("../../public/bg.png");
+                background-position-x: - 181px;
+                background-position-y: bottom;
+                object-fit: contain;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+
+
+            & .bg-1 {
+                position: absolute;
+                right: 54px;
+                bottom: 112px;
+                width: 146px;
+                height: 146px;
+
+                background-image: url("../../public/export.png");
+                background-position-y: bottom;
+                object-fit: contain;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            & .bg-2 {
+                position: absolute;
+                top: 18px;
+                left: 185px;
+                width: 191px;
+                height: 191px;
+
+                background-image: url("../../public/oval.png");
+                background-position-y: bottom;
+                object-fit: contain;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            @include b.breakpoint-down("1000") {
+
+                &,
+                & .bg,
+                & .bg-1,
+                & .bg-2 {
+                    display: none;
+                }
+            }
+        }
+
+        & .join--list {
+            @include b.breakpoint("1300") {
+                padding-block-end: 3rem;
+            }
+
+            @include b.breakpoint("1680") {
+                padding-block: 0;
+            }
+        }
+    }
+}

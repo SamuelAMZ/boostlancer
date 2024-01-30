@@ -2,6 +2,7 @@ import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import "../styles/globals.css";
+import "../styles/app.min.css";
 import { project } from "../utils/data";
 
 // Use the <SessionProvider> to improve performance and allow components that call
