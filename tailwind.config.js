@@ -10,7 +10,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
+      backgroundImage: {
+        "hero-pattern": "url('/bg.png')",
+      },
       colors: {
+        boostlancer: {
+          "dark-grey": "#001E00",
+          "light-grey": "#14A800",
+        },
         primary: "#4f46e5",
         secondary: "#020617",
       },
